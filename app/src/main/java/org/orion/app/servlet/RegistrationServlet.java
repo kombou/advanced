@@ -47,10 +47,10 @@ public class RegistrationServlet extends HttpServlet {
 
             Account account = new Account();
 
-            account.setName(request.getParameter(model.getName()));
-            account.setSurname(request.getParameter(model.getSurname()));
-            account.setEmail(request.getParameter(model.getEmail()));
-            account.setPasswordHash(request.getParameter(model.getpasswordMatcher()));
+            account.setName(model.getName());
+            account.setSurname(model.getSurname());
+            account.setEmail(model.getEmail());
+            account.setPasswordHash(model.getpasswordMatcher());
 
             repository.Save(account);
 
