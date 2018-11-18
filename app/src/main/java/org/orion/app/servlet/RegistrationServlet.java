@@ -55,10 +55,12 @@ public class RegistrationServlet extends HttpServlet {
             repository.Save(account);
 
             response.sendRedirect("/login");
+        }else {
+
+            request.setAttribute("errors",validator.getErrors());
+            request.getRequestDispatcher(URL_JSP_REISTRATION).forward(request,response);
         }
 
-        request.setAttribute("errors",validator.getErrors());
-        request.getRequestDispatcher(URL_JSP_REISTRATION).forward(request,response);
 
 
 

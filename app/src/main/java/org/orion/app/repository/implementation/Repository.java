@@ -81,6 +81,8 @@ public abstract class Repository<T,ID> implements IRepository<T,ID> {
 
         try {
 
+            session.beginTransaction();
+
             session.save(obj);
 
             session.getTransaction().commit();
